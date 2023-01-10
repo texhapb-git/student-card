@@ -1,0 +1,124 @@
+$error-color: #f44336;
+
+
+.btn {
+	@apply py-3 px-6 rounded-lg text-lg;
+
+	&.btn-primary {
+		@apply bg-blue-600 text-white transition-colors ease-in-out;
+
+		&:hover {
+			@apply bg-blue-700;
+		}
+
+	}
+
+	&.btn-secondary {
+		@apply bg-gray-400 text-white transition-colors ease-in-out;
+
+		&:hover {
+			@apply bg-gray-500;
+		}
+	}
+}
+
+.user-card {
+	@apply mb-4;
+}
+
+.input-field {
+	@apply p-0 m-0 mb-6 border-0 align-top rounded-lg;
+
+	.input-field-container {
+		@apply relative rounded-lg;
+	}
+
+	label {
+		@apply my-2;
+	}
+
+	label span {
+		@apply absolute top-2/4 left-0 right-auto text-base leading-none max-w-full truncate z-0 bg-transparent text-[#9f9f9f];
+		padding: 2px 35px 2px 11px;
+		transform: translateY(-50%);
+		transition: transform .3s ease-in-out, font-size .3s ease-in-out;
+	}
+
+	&.focused label span {
+		@apply text-xs leading-none;
+		transform: translate(3px, -34px);
+	}
+
+	&.error label span {
+		color: $error-color;
+	}
+
+	input {
+		display: block;
+		width: 100%;
+		height: 52px;
+		border-radius: 4px;
+		box-sizing: border-box;
+		padding-left: 12px;
+		padding-right: 12px;
+		outline: none;
+		font-weight: normal;
+		font-size: 1rem;
+		color: #2B2D33;
+	}
+
+
+
+	fieldset {
+		text-align: left;
+		position: absolute;
+		inset: -5px 0px 0px;
+		margin: 0px;
+		padding: 0px 8px;
+		pointer-events: none;
+		border-radius: inherit;
+		border-style: solid;
+		border-width: 1px;
+		overflow: hidden;
+		min-width: 0%;
+		border: 1px solid #D5D5D6;
+	}
+
+	&.error fieldset {
+		border-color: $error-color;
+	}
+
+	legend {
+		float: unset;
+		width: auto;
+		overflow: hidden;
+		display: block;
+		padding: 0;
+		height: 11px;
+		font-size: 0.75em;
+		visibility: hidden;
+		max-width: 0;
+		-webkit-transition: max-width 50ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+		transition: max-width 50ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+		white-space: nowrap;
+	}
+
+	&.focused legend {
+		max-width: 100%;
+	}
+
+	legend span {
+		padding-left: 5px;
+		padding-right: 5px;
+		display: inline-block;
+		opacity: 0;
+		visibility: visible;
+	}
+
+	.input-field-error {
+		color: $error-color;
+		padding: 4px 0 0 11px;
+		font-size: 0.75rem;
+		line-height: 1;
+	}
+}
